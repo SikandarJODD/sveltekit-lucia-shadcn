@@ -35,6 +35,9 @@
 
 	let isProfileMenu = false;
 	let isMobileMenu = false;
+
+	//  Checking via email is user logged in
+	export let email = '';
 </script>
 
 <nav class="bg-white shadow border-b border-slate-300">
@@ -105,10 +108,21 @@
 			</div>
 			<div class="flex items-center">
 				<div class="flex-shrink-0">
-					<Button href="/login">
-						<User size="18" class="mr-1" strokeWidth="2" />
-						Log In</Button
-					>
+					{#if email.length > 0}
+						<!-- if user is logged in -->
+						<form method="POST">
+							<Button formaction="/?/logout">
+								<User size="18" class="mr-1" strokeWidth="2" />
+								Log Out</Button
+							>
+						</form>
+					{:else}
+						<!-- if user is not logged in -->
+						<Button href="/login">
+							<User size="18" class="mr-1" strokeWidth="2" />
+							Log In</Button
+						>
+					{/if}
 				</div>
 			</div>
 		</div>
