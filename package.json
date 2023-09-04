@@ -10,7 +10,9 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"generate": "drizzle-kit generate:pg"
+		"generate": "drizzle-kit generate:pg",
+		"push": "drizzle-kit push:pg",
+		"pull": "drizzle-kit introspect:pg"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
